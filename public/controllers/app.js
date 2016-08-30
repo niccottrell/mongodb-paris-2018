@@ -5,8 +5,8 @@ var myApp = angular.module('myApp', []);
 myApp.controller('appCtrl', function appCtrl($scope, $http) {
 	$scope.formData = {};
 
-	$http.get('/models')
-		.success(function(data) { 
+	$http.get('/questions')
+		.success(function(data) {
 			$scope.models = data;
 			console.log(data);
 		})
@@ -15,7 +15,7 @@ myApp.controller('appCtrl', function appCtrl($scope, $http) {
 		});
 
 	$scope.createModel = function() {
-		$http.post('/models', $scope.formData)
+		$http.post('/questions', $scope.formData)
 			.success(function(data) {
 				$scope.formData = {};
 				$scope.models = data;
@@ -27,7 +27,7 @@ myApp.controller('appCtrl', function appCtrl($scope, $http) {
 	};
 
 	$scope.deleteModel = function(id) {
-		$http.delete('/models/' + id)
+		$http.delete('/questions/' + id)
 			.success(function(data) {
 				$scope.models = data;
 				console.log(data);

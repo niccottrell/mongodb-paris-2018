@@ -5,11 +5,11 @@ Schema = mongoose.Schema;
 // and should be defined before the schema for readability
 
 
-// Model Schema
-var ModelSchema = new Schema ({
+// Question Schema
+var QuestionSchema = new Schema ({
 	name : {
 		type: String
 	},
 });
 
-module.exports = mongoose.model('Model', ModelSchema);
+module.exports = mongoose.model('Question', QuestionSchema);
