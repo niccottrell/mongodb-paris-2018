@@ -19,18 +19,18 @@
 
 		<!-- FORM TO CREATE MODELS -->
 		<div id="model-form" class="form-horizontal">
-			<div class="col-sm-8 col-sm-offset-2 text-center" id="name-field">
+			<div class="col-sm-8 col-sm-offset-2 text-center" id="question-field">
 
 				<!-- Only posts to Angular's createModel if form is valid and was submitted -->
 				<form name="modelCreate" ng-submit="modelCreate.$valid && submitted && createModel()" novalidate>
-					<div class="form-group" ng-class="{'has-error': submitted && modelCreate.name.$invalid}">
+					<div class="form-group" ng-class="{'has-error': submitted && modelCreate.question.$invalid}">
 
-						<!-- BIND THIS VALUE TO formData.name -->
+						<!-- BIND THIS VALUE TO formData.question -->
 						<div class="col-sm-12">
-							<input type="name" name="name"  class="form-control input-lg text-center" placeholder="Enter a question" ng-model="formData.name" required />
+							<input type="question" name="question"  class="form-control input-lg text-center" placeholder="Enter a question" ng-model="formData.question" required />
 
-							<div ng-show="submitted && modelCreate.name.$invalid">
-								<p ng-show="modelCreate.name.$error.required">
+							<div ng-show="submitted && modelCreate.quesiton.$invalid">
+								<p ng-show="modelCreate.question.$error.required">
 									Question is a required field
 								</p>
 							</div>
@@ -57,7 +57,7 @@
 							</div>
 						</div>
 
-						<div type="text" class="form-control"> {{model.name}}</div>
+						<div type="text" class="form-control"> {{model.question}}</div>
 					</div>
 				</div>
 			</div>

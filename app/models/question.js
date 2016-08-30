@@ -7,7 +7,7 @@ Schema = mongoose.Schema;
 
 // Question Schema
 var QuestionSchema = new Schema ({
-	name : {
+	question : {
 		type: String
 	},
 });

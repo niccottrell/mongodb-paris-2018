@@ -9,7 +9,7 @@ module.exports = function(app) {
 		Question.
 		  find({}).
 		  sort({ _id: -1 }).
-		  select({ _id:1, name: 1 }).
+		  select({ _id:1, question: 1 }).
 		  exec(function(err, questions) {
 				// returns all quetions in JSON format
 				res.send(questions);
@@ -19,7 +19,7 @@ module.exports = function(app) {
 	// Example POST route
 	app.post('/questions', function (req, res) {
 		Question.create({
-			name : req.body.name // Bound using Angular
+			question : req.body.question // Bound using Angular
 		}, function(err, model) {
 			if(err) {
 				res.send(err);
