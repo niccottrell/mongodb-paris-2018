@@ -5,13 +5,15 @@ module.exports = function(app) {
 
 	// Example API route
 	app.get('/questions', function(req, res) {
-
-		// Checks the question collection and returns all of them`
-		Question.find(function(err, questions) {
-
-			// returns all people in JSON format
-			res.send(questions);
-		});
+		// Checks the question collection and returns all of them in chronological order
+		Question.
+		  find({}).
+		  sort({ _id: -1 }).
+		  select({ _id:1, name: 1 }).
+		  exec(function(err, questions) {
+				// returns all quetions in JSON format
+				res.send(questions);
+			});
 	});
 
 	// Example POST route
