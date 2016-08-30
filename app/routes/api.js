@@ -5,7 +5,7 @@ module.exports = function(app) {
 
 	// Example API route
 	app.get('/questions', function(req, res) {
-		// Checks the question collection and returns all of them in chronological order
+		// Checks the question collection and returns all of them most recent first
 		Question.
 		  find({}).
 		  sort({ _id: -1 }).
