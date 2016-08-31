@@ -13,7 +13,7 @@ mongoose.connect(db.url);
 // Initialize the Express App
 var app = express();
 
-// Configure 
+// Configure
 
 // To expose public assets to the world
 app.use(express.static(__dirname + '/public'));

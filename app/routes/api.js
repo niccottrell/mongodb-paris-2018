@@ -1,22 +1,20 @@
-// Module for API Routes (serving JSON)
 module.exports = function(app) {
-	var mongoose = require('mongoose'),
-		Question = require('../models/question')
+	var mongoose = require('mongoose')
+	var Question = require('../models/question')
 
-	// Example API route
+	// GET route
 	app.get('/questions', function(req, res) {
 		// Checks the question collection and returns all of them most recent first
-		Question.
-		  find({}).
-		  sort({ _id: -1 }).
-		  select({ _id:1, question: 1 }).
-		  exec(function(err, questions) {
-				// returns all quetions in JSON format
+		Question
+		  .find({})
+		  .sort({ _id: -1 })
+		  .select({ _id:1, question: 1 })
+		  .exec(function(err, questions) {
 				res.send(questions);
 			});
 	});
 
-	// Example POST route
+	// POST route
 	app.post('/questions', function (req, res) {
 		Question.create({
 			question : req.body.question // Bound using Angular
@@ -25,32 +23,30 @@ module.exports = function(app) {
 				res.send(err);
 			}
 
-			Question.
-			  find({}).
-			  sort({ _id: -1 }).
-			  select({ _id:1, question: 1 }).
-			  exec(function(err, questions) {
-					// returns all quetions in JSON format
+			Question
+				.find({})
+			  .sort({ _id: -1 })
+			  .select({ _id:1, question: 1 })
+			  .exec(function(err, questions) {
 					res.send(questions);
 				});
 		});
 	});
 
-	// Example DELETE route
+	// DELETE route
 	app.delete('/questions/:model_id', function (req, res) {
 		Question.remove({
-			_id: req.params.model_id
+			_id: req.params.model_id // Bound using Angular
 		}, function(err, model) {
 			if(err) {
 				res.send(err);
 			}
 
-			Question.
-			  find({}).
-			  sort({ _id: -1 }).
-			  select({ _id:1, question: 1 }).
-			  exec(function(err, questions) {
-					// returns all quetions in JSON format
+			Question
+				.find({})
+			  .sort({ _id: -1 })
+			  .select({ _id:1, question: 1 })
+			  .exec(function(err, questions) {
 					res.send(questions);
 				});
 		});

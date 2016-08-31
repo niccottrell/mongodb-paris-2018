@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-	<title>MongoDB Evenings 2016 SoCal</title>
+	<title>MongoDB Evenings 2016</title>
 
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
@@ -18,10 +18,6 @@
 	</div>
 
 	<div class="container">
-
-		<div class="jumbotron text-center">
-			<h1>Questions <span class="label label-info">{{ models.length }}</span></h1>
-		</div>
 
 		<!-- FORM TO CREATE MODELS -->
 		<div id="model-form" class="form-horizontal">
@@ -53,9 +49,10 @@
 
 		<!-- MODEL LIST -->
 		<div id="model-list" class="row">
-			<!--<div class="col-sm-4 col-sm-offset-4">-->
 			<div class="col-sm-8 col-sm-offset-2">
-				<br/><br/>
+
+				<center><h3>Questions <span class="label label-info">{{ models.length }}</span></h3></center>
+
 				<!-- LOOP OVER THE MODELS IN $scope.models -->
 				<div ng-repeat="model in models" class="model-item">
 					<div class="input-group input-group-lg">

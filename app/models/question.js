@@ -1,11 +1,6 @@
 var mongoose = require('mongoose'),
 Schema = mongoose.Schema;
 
-// Validation helper methods should return booleans
-// and should be defined before the schema for readability
-
-
-// Question Schema
 var QuestionSchema = new Schema ({
 	question : {
 		type: String
