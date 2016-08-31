@@ -24,11 +24,7 @@ module.exports = function(app) {
 			if(err) {
 				res.send(err);
 			}
-			/*
-			Question.find(function(err, models) {
-				res.send(models);
-			});
-			*/
+
 			Question.
 			  find({}).
 			  sort({ _id: -1 }).
@@ -48,11 +44,7 @@ module.exports = function(app) {
 			if(err) {
 				res.send(err);
 			}
-			/*
-			Question.find(function(err, models) {
-				res.send(models);
-			});
-			*/
+
 			Question.
 			  find({}).
 			  sort({ _id: -1 }).
@@ -60,7 +52,7 @@ module.exports = function(app) {
 			  exec(function(err, questions) {
 					// returns all quetions in JSON format
 					res.send(questions);
-				});				
+				});
 		});
 	});
 }
