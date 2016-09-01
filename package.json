@@ -1,0 +1,26 @@
+{
+  "name": "meanquestions",
+  "version": "1.0.0",
+  "description": "Demo for MongoDB Evenings 2016",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snarvaez/meanquestions.git"
+  },
+  "author": "Sigfrido Narvaez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snarvaez/meanquestions/issues"
+  },
+  "homepage": "https://github.com/snarvaez/meanquestions#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.8",
+    "mongoose": "^4.5.10",
+    "morgan": "^1.7.0"
+  }
+}
