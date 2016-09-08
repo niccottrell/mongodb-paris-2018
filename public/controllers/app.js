@@ -7,7 +7,8 @@ myApp.controller('appCtrl', function appCtrl($scope, $http) {
 
 	$http.get('/questions')
 		.success(function(data) {
-			$scope.models = data;
+			$scope.models = data.models;
+			$scope.applauseCount =  data.applauseCount;
 			console.log(data);
 		})
 		.error(function(data) {
@@ -30,6 +31,17 @@ myApp.controller('appCtrl', function appCtrl($scope, $http) {
 		$http.delete('/questions/' + id)
 			.success(function(data) {
 				$scope.models = data;
+				console.log(data);
+			})
+			.error(function(data) {
+				console.log("Error: " + data);
+			});
+	};
+
+	$scope.createApplause = function() {
+		$http.post('/applause', $scope.formData)
+			.success(function(data) {
+				$scope.applauseCount =  data.applauseCount;
 				console.log(data);
 			})
 			.error(function(data) {
