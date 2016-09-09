@@ -44,6 +44,14 @@
 						Add
 					</button>
 				</form>
+
+				<form name="applauseCreate" ng-submit="createApplause()" novalidate>
+					<!-- Sets the value submitted to true to help with form validation -->
+					<button type="submit" class="btn btn-primary btn-lg">
+						Applause
+					</button>
+				</form>
+
 			</div>
 		</div>
 
@@ -52,6 +60,7 @@
 			<div class="col-sm-8 col-sm-offset-2">
 
 				<center><h3>Questions <span class="label label-info">{{ models.length }}</span></h3></center>
+				<center><h3>Applauses <span class="label label-info">{{ applauseCount }}</span></h3></center>
 
 				<!-- LOOP OVER THE MODELS IN $scope.models -->
 				<div ng-repeat="model in models" class="model-item">
