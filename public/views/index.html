@@ -11,12 +11,12 @@
 	<script type="text/javascript" src="../controllers/app.js"></script>
 </head>
 <body ng-controller="appCtrl">
-
 	<div class="container">
 	    <div class="row">
           <div class="col-md-10 col-md-offset-1 col-sm-12">
-          	<img class="img-responsive" src="../assets/images/MDBE16 Banner-7dcrqdxagw.jpg"/>          
-						<br>
+                <div style="margin:0 auto;">
+                    <img class="img-responsive" src="../assets/images/MDBE16 Banner-7dcrqdxagw.jpg">
+                </div>
             <!-- FORM TO CREATE MODELS -->
             <div id="model-form"><!-- class="form-horizontal" -->
                     <!-- Only posts to Angular's createModel if form is valid and was submitted -->
@@ -27,6 +27,7 @@
                                 <!-- BIND THIS VALUE TO formData.question -->
                                 <div class="col-sm-12">
                                     <input type="question" name="question"  class="form-control input-lg text-center" placeholder="Enter a question" ng-model="formData.question" required />
+
                                     <div ng-show="submitted && modelCreate.quesiton.$invalid">
                                         <p ng-show="modelCreate.question.$error.required">Question is a required field</p>
                                     </div>
@@ -34,6 +35,7 @@
                             </div>
                         </div>
                     </div>
+                    <br>
                     <div class="row">
                        <div class="col-md-5 col-md-offset-1 col-sm-12">
                           <div class="text-center" style="max-width:200px; margin:0 auto;">
