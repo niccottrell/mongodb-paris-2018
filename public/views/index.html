@@ -2,10 +2,8 @@
 <html ng-app="myApp">
 <head>
 	<title>MongoDB Evenings 2016</title>
-
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
-
 	<!--  Angular from Google CDN -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 	<!-- Load AppController -->
@@ -15,73 +13,87 @@
 
 	<div class="container">
 	    <div class="row">
-		    <img src="../assets/images/MDBE16 Banner-7dcrqdxagw.jpg"/>
-		</div>
-    </div><!-- container might need to be over everything -->
+          <div class="col-sm-10 col-sm-offset-1">
+            <!--<img src="../assets/images/MDBE16 Banner-7dcrqdxagw.jpg"/>-->
+                <img class="img-responsive" src="http://placehold.it/700x150">
+                <br>
+            <!-- FORM TO CREATE MODELS -->
+            <div id="model-form" class="form-horizontal">
+                    <!-- Only posts to Angular's createModel if form is valid and was submitted -->
+                <form name="modelCreate" ng-submit="modelCreate.$valid && submitted && createModel()" novalidate>
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text-center" id="question-field">
+                            <div class="form-group" ng-class="{'has-error': submitted && modelCreate.question.$invalid}">
+                                <!-- BIND THIS VALUE TO formData.question -->
+                                <div class="col-sm-12">
+                                    <input type="question" name="question"  class="form-control input-lg text-center" placeholder="Enter a question" ng-model="formData.question" required />
+                                    <div ng-show="submitted && modelCreate.quesiton.$invalid">
+                                        <p ng-show="modelCreate.question.$error.required">Question is a required field</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-md-5 col-md-offset-1 col-sm-12">
+                          <div class="text-center" style="max-width:200px; margin:0 auto;">
+                             <button type="submit" class="btn btn-primary btn-md btn-block" ng-click="submitted=true">Add</button><br>
+                         </div>
+                            <h3 class="text-center" style="margin-top:0;">Questions <span class="label label-info">167<!--{{ models.length }}--></span></h3>
+                       </div>
+                       <div class="col-md-5 col-sm-12">
+                              <!-- shouldn't be a form here-->
+                              <div class="text-center" style="max-width:200px; margin:0 auto;">
+                                <form name="applauseCreate" ng-submit="createApplause()" novalidate >
+                                  <button type="submit" class="btn btn-primary btn-md btn-block">Applause</button>
+                                </form>
+                              </div>
+                              <h3 class="text-center">
+                                  Applauses <span class="label label-info">120<!--{{ applauseCount }}--></span>
+                              </h3>
+                       </div>
+                    </div>
+                </form>
+            </div>
+            <br>
 
-	<div class="container">
-		<!-- FORM TO CREATE MODELS -->
-		<div id="model-form" class="form-horizontal">
-				<!-- Only posts to Angular's createModel if form is valid and was submitted -->
-			<form name="modelCreate" ng-submit="modelCreate.$valid && submitted && createModel()" novalidate>
-				<div class="row">
-					<div class="col-sm-8 col-sm-offset-2 text-center" id="question-field">
-						<div class="form-group" ng-class="{'has-error': submitted && modelCreate.question.$invalid}">
-							<!-- BIND THIS VALUE TO formData.question -->
-							<div class="col-sm-12">
-								<input type="question" name="question"  class="form-control input-lg text-center" placeholder="Enter a question" ng-model="formData.question" required />
-								<div ng-show="submitted && modelCreate.quesiton.$invalid">
-									<p ng-show="modelCreate.question.$error.required">
-										Question is a required field
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-				    <div class="col-sm-10 col-offset-1">
-				        <div class="row">
-    					    <div class="col-sm-6">
-    						    <button type="submit" class="btn btn-primary btn-md text-center" ng-click="submitted=true">Add</button><br>
-    						    <h4 class="text-center">Questions <span class="label label-info">{{ models.length }}</span></h4>
-    				    	</div>
-    					    <div class="col-sm-6">
-    					        <!-- shouldn't be a form here-->
-    						    <form name="applauseCreate" ng-submit="createApplause()" novalidate>
-    						    	<button type="submit" class="btn btn-primary btn-md">Applause</button>
-    						    </form>
-    						    <h4 class="text-center">
-    						        Applauses <span class="label label-info">{{ applauseCount }}</span>
 
-    						    </h4>
-    					    </div>
-					    </div>
-					</div>
-				</div><!--row-->
-			</form>
+    <div id="model-list" class="row"><!-- MODEL LIST -->
+        <div class="col-sm-8 col-sm-offset-2">
+            <!-- LOOP OVER THE MODELS IN $scope.models -->
+            <div ng-repeat="model in models" class="model-item">
+                <div class="input-group input-group-lg"> <!-- note no input groups -->
+                    <div class="input-group-addon">
+                        <div class="glyphicon glyphicon-remove" ng-click="deleteModel(model._id)"></div>
+                    </div>
+                    <div type="text" class="form-control"> {{model.question}}</div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end model list-->
 
-		</div>
-	</div>
-	<div class="container">
-			<!-- MODEL LIST -->
-		<div id="model-list" class="row">
-			<div class="col-sm-8 col-sm-offset-2">
 
-				<!-- LOOP OVER THE MODELS IN $scope.models -->
-				<div ng-repeat="model in models" class="model-item">
-					<div class="input-group input-group-lg">
-						<div class="input-group-addon">
-							<div class="glyphicon glyphicon-remove" ng-click="deleteModel(model._id)">
-							</div>
-						</div>
 
-						<div type="text" class="form-control"> {{model.question}}</div>
-					</div>
-				</div>
-			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div><!-- col 10-->
 		</div>
     </div>
+
+
 
 </body>
 </html>
