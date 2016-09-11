@@ -14,12 +14,11 @@
 	<div class="container">
 	    <div class="row">
           <div class="col-md-10 col-md-offset-1 col-sm-12">
-                <div class="row">
-                    <img class="img-responsive center-block" src="../assets/images/MDBE16 Banner-7dcrqdxagw.jpg">
-                  <br>
-                </div>
+            <div class="row">
+                <img class="img-responsive center-block" src="../assets/images/MDBE16 Banner-7dcrqdxagw.jpg">
+            </div>
             <!-- FORM TO CREATE MODELS -->
-            <div id="model-form"><!-- class="form-horizontal" -->
+            <div id="model-form">
                     <!-- Only posts to Angular's createModel if form is valid and was submitted -->
                 <form name="modelCreate" ng-submit="modelCreate.$valid && submitted && createModel()" novalidate>
                     <div class="row">
@@ -28,7 +27,6 @@
                                 <!-- BIND THIS VALUE TO formData.question -->
                                 <div class="col-sm-12">
                                     <input type="question" name="question"  class="form-control input-lg text-center" placeholder="Enter a question" ng-model="formData.question" required />
-
                                     <div ng-show="submitted && modelCreate.quesiton.$invalid">
                                         <p ng-show="modelCreate.question.$error.required">Question is a required field</p>
                                     </div>
@@ -42,11 +40,10 @@
                           <div class="text-center" style="max-width:200px; margin:0 auto;">
                              <button type="submit" class="btn btn-primary btn-md btn-block" ng-click="submitted=true">Add</button><br>
 														 </form>
-                         </div>
-                            <h3 class="text-center" style="margin-top:0;">Questions <span class="label label-info">{{ models.length }}</span></h3>
+                         	</div>
+                        	<h3 class="text-center" style="margin-top:0;">Questions <span class="label label-info">{{ models.length }}</span></h3>
                        </div>
                        <div class="col-md-5 col-sm-12">
-                              <!-- shouldn't be a form here-->
                               <div class="text-center" style="max-width:200px; margin:0 auto;">
                                 <form name="applauseCreate" ng-submit="createApplause()" novalidate >
                                   <button type="submit" class="btn btn-primary btn-md btn-block">Applause</button>
