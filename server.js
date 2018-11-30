@@ -8,12 +8,10 @@ var morgan = require('morgan');
 var db = require('./config/db');
 
 // Connect to the DB
-mongoose.connect(db.url);
+mongoose.connect(db.url, { useMongoClient: true });
 
 // Initialize the Express App
 var app = express();
-
-// Configure
 
 // To expose public assets to the world
 app.use(express.static(__dirname + '/public'));

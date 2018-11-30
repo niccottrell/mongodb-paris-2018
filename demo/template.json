@@ -1,0 +1,88 @@
+{
+  "name": "{{chance.sentence({ words: 3 })}}",
+  "telephone": {
+    "$number": {
+      "min": 1111111111,
+      "max": 9999999999
+    }
+  },
+  "site": "{{chance.url()}}",
+  "location": {
+    "$coordinates": {
+      "long_lim": [
+        48.5,
+        49
+      ],
+      "lat_lim": [
+        2.3,
+        2.4
+      ]
+    }
+  },
+  "cuisine": {
+    "$pickset": {
+      "array": [
+        "albanaise",
+        "allemande",
+        "bavaroise",
+        "autrichienne",
+        "basque",
+        "belge",
+        "britannique",
+        "anglaise",
+        "écossaise",
+        "galloise",
+        "bulgare",
+        "chypriote",
+        "danoise",
+        "espagnole",
+        "galicienne",
+        "finlandaise",
+        "française",
+        "alsacienne",
+        "angevine",
+        "bourguignonne",
+        "gersoise",
+        "lyonnaise",
+        "grecque",
+        "hongroise",
+        "italienne",
+        "irlandaise",
+        "islandaise",
+        "lituanienne",
+        "luxembourgeoise",
+        "macédonienne",
+        "maltaise",
+        "monténégrine",
+        "néerlandaise",
+        "norvégienne",
+        "polonaise",
+        "portugaise",
+        "russe",
+        "suédoise",
+        "suisse",
+        "tchèque",
+        "ukrainienne",
+        "californienne",
+        "texane",
+        "mexicaine"
+      ],
+      "quantity": 3
+    }
+  },
+  "photo_facade": {
+    "blob": "$binary"
+  },
+  "menu": {
+    "$array": {
+      "of": "{{chance.sentence({ words: 4 })}}",
+      "number": 3
+    }
+  },
+  "year_opened": {
+    "$year": {
+      "min": 1990,
+      "max": 2018
+    }
+  }
+}
