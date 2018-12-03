@@ -16,7 +16,7 @@ MongoClient.connect(url, function (err, client) {
         "site": "http://ilovepuce.com/",
         "location": {
             "type": "Point",
-            "coordinates": [48.8834, 2.33761]
+            "coordinates": [2.33761, 48.8834]
         },
         "cuisine": ["japonaise", "mexicaine", "française"],
         "menu": [

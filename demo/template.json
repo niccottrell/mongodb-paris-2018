@@ -8,54 +8,52 @@
   },
   "site": "{{chance.url()}}",
   "location": {
-    "$coordinates": {
+    "$point": {
       "long_lim": [
-        48.5,
-        49
-      ],
-      "lat_lim": [
         2.3,
         2.4
+      ],
+      "lat_lim": [
+        48.8,
+        48.9
+      ]
+    }
+  },
+  "code_postal": {
+    "$choose": {
+      "from": [
+        "75009",
+        "75010",
+        "75008",
+        "75011"
+      ],
+      "weights": [
+        1,
+        2,
+        3,
+        1
       ]
     }
   },
   "cuisine": {
     "$pickset": {
       "array": [
-        "albanaise",
         "allemande",
-        "bavaroise",
-        "autrichienne",
         "basque",
         "belge",
         "britannique",
         "anglaise",
         "écossaise",
         "galloise",
-        "bulgare",
-        "chypriote",
         "danoise",
         "espagnole",
-        "galicienne",
         "finlandaise",
         "française",
-        "alsacienne",
-        "angevine",
-        "bourguignonne",
-        "gersoise",
-        "lyonnaise",
         "grecque",
         "hongroise",
         "italienne",
         "irlandaise",
-        "islandaise",
-        "lituanienne",
-        "luxembourgeoise",
-        "macédonienne",
-        "maltaise",
-        "monténégrine",
-        "néerlandaise",
-        "norvégienne",
+        "japonaise",
         "polonaise",
         "portugaise",
         "russe",
@@ -63,8 +61,6 @@
         "suisse",
         "tchèque",
         "ukrainienne",
-        "californienne",
-        "texane",
         "mexicaine"
       ],
       "quantity": 3

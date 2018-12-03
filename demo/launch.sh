@@ -1,3 +1,3 @@
 # rm -rf db/*
-mkdir db/
+mkdir -p db/
 mongod --dbpath db/

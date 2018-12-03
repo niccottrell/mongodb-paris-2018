@@ -10,7 +10,7 @@ MongoClient.connect(url, function (err, client) {
     const db = client.db(dbName);
     const coll = db.collection(collName);
 
-    var center = [48.8835, 2.337573];
+    var center = [2.337573, 48.8835];
     var radius = 0.0001569;
 
     coll.find({
