@@ -1,7 +1,7 @@
 module.exports = function(app) {
-	var mongoose = require('mongoose')
-	var Question = require('../models/question')
-	var Applause = require('../models/applause')
+	var mongoose = require('mongoose');
+	var Question = require('../models/question');
+	var Applause = require('../models/applause');
 
 	// GET route
 	app.get('/questions', function(req, res) {
@@ -32,7 +32,7 @@ module.exports = function(app) {
 			}
 
 			Question
-				.find({})
+			  .find({})
 			  .sort({ _id: -1 })
 			  .select({ _id:1, question: 1 })
 			  .exec(function(err, questions) {
@@ -78,4 +78,4 @@ module.exports = function(app) {
 				});
 		});
 	});
-}
+};

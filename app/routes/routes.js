@@ -1,3 +1,5 @@
+var path = require('path');
+
 // Exported routes to Node - last declared hiearchy: bottom may override top
 module.exports = function(app) {
 
@@ -10,6 +12,6 @@ module.exports = function(app) {
 
 	// Wildcard route
 	app.get('*', function(req, res) {
-		res.sendfile('public/views/index.html');
+		res.sendFile(path.resolve('public/views/index.html'));
 	});
 };
