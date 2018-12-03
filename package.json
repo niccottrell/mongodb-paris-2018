@@ -1,21 +1,21 @@
 {
-  "name": "meanquestions",
+  "name": "mongodb-paris-2018",
   "version": "1.0.0",
-  "description": "Demo for MongoDB Evenings 2016",
+  "description": "Demo for MongoDB Paris 2018",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/snarvaez/meanquestions.git"
+    "url": "git+https://github.com/niccottrell/mongodb-paris-2018.git"
   },
-  "author": "Sigfrido Narvaez",
+  "author": "Nic Cottrell",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/snarvaez/meanquestions/issues"
+    "url": "https://github.com/niccottrell/mongodb-paris-2018/issues"
   },
-  "homepage": "https://github.com/snarvaez/meanquestions#readme",
+  "homepage": "https://github.com/niccottrell/mongodb-paris-2018#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
